@@ -18,7 +18,7 @@ from distribution_regressor import DistributionRegressor
 
 # Učitavanje stvarnih loto podataka iz CSV (bez random/sintetičkih podataka)
 np.random.seed(39)
-csv_path = "/Users/4c/Desktop/GHQ/data/loto7hh_4592_k27.csv"
+csv_path = "/data/loto7hh_4592_k27.csv"
 df = pd.read_csv(csv_path)
 cols = ["Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7"]
 draws = df[cols].values.astype(float)
@@ -96,7 +96,7 @@ plt.legend()
 plt.grid(alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('/Users/4c/Desktop/GHQ/kurzor/DistributionRegressor-main/examples/uncertainty_quantification.png', dpi=150, bbox_inches='tight')
+plt.savefig('/uncertainty_quantification.png', dpi=150, bbox_inches='tight')
 print("\n✓ Saved visualization to 'uncertainty_quantification.png'")
 
 # Analyze uncertainty at different points
@@ -137,6 +137,7 @@ for i in range(7):
 
 predicted_next = np.array(predicted_next, dtype=int)
 print("Predicted next loto 7/39 combination:", predicted_next)
+
 """
 Training model to capture uncertainty...
 
@@ -159,5 +160,5 @@ are more uncertain in regions with higher noise variance!
 Loto 7/39 - Predikcija sledeće kombinacije
 ============================================================
 Predicted next loto 7/39 combination: 
-[ 3  8 14 20 26 31 36]
+[ 3  8 14 x 26 y z]
 """
